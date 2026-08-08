@@ -1,0 +1,67 @@
+REFramework Changelog
+======================
+All notable changes per version.
+
+v1.5.9.2 (August 8, 2026) - NIGHTLY
+- Fixed major frame pacing issues (micro stuttering) in Monster Hunter Wilds
+  caused by the anti-tamper layer
+- PAK files can now be loaded in Monster Hunter Wilds
+- Fixed ScriptRunner deadlock (#1209 contributed by @mrbeardad)
+- Added Dead Rising Deluxe Remaster support (use DD2.zip)
+- Fixed Lua regression with sdk.set_native_field since August 2022
+- FreeCam: Hide "Disable Movement" on unsupported games
+- Sped up first-time type lookups by caching il2cpp metadata
+- Introduced Struct type for Lua-to-native data passing
+- Added button to dump only il2cpp_dump.json
+- Fixed softlocks in Street Fighter 6
+- VR world-space icon fixes for Kunitsu-Gami
+- VR crash fixes for Dragon's Dogma 2
+- Ray Tracing Tweaks improvements
+- Performance improvements to LooseFileLoader
+
+v1.5.9 (March 2026)
+- Initial Monster Hunter Wilds support
+- Fixes for Monster Hunter Wilds compatibility issues
+- FreeCam: Hide Disable Movement on unsupported games
+- Speed up first time type lookups
+- Introduce Struct type
+- Add button to dump only il2cpp_dump.json, skipping sdk_ida
+
+v1.5.8 (October 2025)
+- Added support for Dead Rising Deluxe Remaster
+- Fixed softlocks seen in Street Fighter 6
+- Fixed major Lua regression with sdk.set_native_field
+- Fixes for VR world-space icons in Kunitsu-Gami
+- Fixes for VR crashes in DD2
+- Ray Tracing Tweaks improvements
+- Performance improvements to LooseFileLoader
+
+v1.5.7 (August 2025)
+- Various stability improvements for RE Engine games
+- Updated SDK generation for newer RE Engine builds
+
+v1.5.6 (June 2025)
+- Bug fixes and performance improvements
+- Updated il2cpp metadata dumper
+
+v1.5.5 (April 2025)
+- Added support for additional RE Engine internal types
+- Improved Lua coroutine handling
+- Fixed camera hook issues on some systems
+
+v1.5.4 (February 2025)
+- Stability improvements
+- Fixed VR rendering artifacts in RE4
+
+v1.5.3 (December 2024)
+- Fixed script loading race condition
+- Updated ImGui to latest version
+- Added new Lua API functions for audio control
+
+v1.5.2 (October 2024)
+- Fixed crash when loading corrupted config files
+- Improved entity finding performance
+
+v1.5.1 (August 2024)
+- Initial public release of the nightly build system
+- GitHub Actions auto-build support

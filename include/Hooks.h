@@ -1,0 +1,23 @@
+#pragma once
+#include <Windows.h>
+#include <d3d11.h>
+#include <cstdint>
+
+class Hooks {
+private:
+    Hooks() = default;
+
+    static IDXGISwapChain* CreateDummySwapChain();
+    static void HookREEngineInternals();
+
+public:
+    static Hooks& GetInstance();
+
+    static bool Initialize();
+    static void Shutdown();
+
+    static void WaitForGameWindow();
+    static HWND GetGameWindow();
+
+    static HRESULT WINAPI HookedRenderTargetSet();
+};

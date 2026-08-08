@@ -1,0 +1,68 @@
+REFramework FAQ
+================
+Version: v1.5.9.2
+Games: Monster Hunter Wilds, RE9, RE4, RE8, RE2, RE3, RE7, DD2, SF6
+
+Q: Reframework MH Wilds black screen?
+A: This is the most common issue after a Monster Hunter Wilds update. The dinput8.dll
+   version doesn't match the new game build. Solution: download the latest nightly
+   v1.5.9.2 from this repository, delete the old dinput8.dll from your game folder,
+   and replace it with the new one. Never mix old and new versions.
+
+Q: Reframework MH Wilds crash after TU4?
+A: After Title Update 4, REFramework needs a corresponding update. v1.5.9.2
+   specifically fixes major frame pacing issues (micro stuttering) caused by the
+   anti-tamper layer in Monster Hunter Wilds. Download the latest nightly and
+   replace dinput8.dll.
+
+Q: Reframework MH Wilds not working after update?
+A: Delete the old dinput8.dll and replace it with the latest from this repository.
+   Verify the file is placed in the same folder as MonsterHunterWilds.exe.
+   Check the REFramework overlay by pressing INSERT.
+
+Q: Reframework MH Wilds uninstall?
+A: Simply delete dinput8.dll from your Monster Hunter Wilds game folder. REFramework
+   leaves no other files behind. Your game returns to vanilla state.
+
+Q: Reframework MH Wilds ban risk?
+A: REFramework is a single-player mod framework. Monster Hunter Wilds does not have
+   anti-cheat in single-player content. Using it in online sessions MAY trigger
+   anti-cheat. Use offline or in private lobby sessions for maximum safety.
+
+Q: Reframework RE9 download - is it the same file?
+A: Yes. The download archive includes all supported games. Use the appropriate zip
+   for RE9. The dinput8.dll works for all RE Engine games.
+
+Q: Reframework RE9 black screen?
+A: Same as MH Wilds: update to the latest nightly. Usually caused by an RE Engine
+   patch that changes memory layouts.
+
+Q: Reframework RE9 VR mode?
+A: Install the UEVR REFramework plugin after installing REFramework. Then enable VR
+   mode in the Config tab of the REFramework overlay.
+
+Q: How to install Nexus mods with REFramework?
+A: REFramework is the prerequisite for most MH Wilds and RE9 mods on Nexus. Place
+   mod files in the natives/ folder following the game's directory structure.
+   Some mods use reframework/autorun/ for Lua scripts.
+
+Q: Where to find REFramework scripts?
+A: Check the Monster Hunter Modding Discord, GitHub, and Nexus Mods. Place .lua
+   files in the reframework/autorun/ subfolder for automatic loading.
+
+Q: Can I use REFramework with other mod managers?
+A: Yes. REFramework does not conflict with FluffyQuack's Fluffy Mod Manager.
+   Load REFramework first, then use Fluffy for PAK file mods.
+
+Q: REFramework keeps crashing on startup?
+A: Make sure you only extracted dinput8.dll (not the VR files) if you don't use VR.
+   Try deleting reframework/config.ini and reframework/imgui.ini to reset settings.
+
+Q: Is REFramework safe?
+A: REFramework is open source (MIT license) by praydog. Scan on VirusTotal. The
+   source code is available on GitHub. Only download from the official repository.
+
+Q: What is dinput8.dll?
+A: It's a DirectX input proxy DLL. REFramework uses it to load before the game's
+   rendering pipeline starts, allowing it to hook DirectX functions for the overlay
+   and Lua scripting system.

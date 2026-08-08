@@ -1,0 +1,100 @@
+REFramework Lua API Reference
+===============================
+Version: v1.5.9.2
+For Monster Hunter Wilds, RE9, and all supported RE Engine games
+
+GLOBAL FUNCTIONS
+  reframework.get_game_version() -> string
+  reframework.get_framework_version() -> string
+
+RE NAMESPACE
+  re.camera.get_active_camera() -> userdata (camera object)
+  re.camera.set_fov(camera, float fov) -> void
+
+  re.game_object.find(string name) -> userdata (game object)
+  re.game_object.spawn(string typeName) -> userdata
+
+  re.scene.set_time_scale(float scale) -> void
+  re.scene.get_time_scale() -> float
+
+  re.audio.set_volume(float volume) -> void
+
+SDK NAMESPACE
+  sdk.get_managed_singleton(string typeName) -> userdata
+  sdk.get_native_singleton(string typeName) -> userdata
+
+  sdk.get_native_field(object, string fieldName) -> any
+  sdk.set_native_field(object, string fieldName, any value) -> void
+
+  sdk.call_native(object, string methodName, ...) -> any
+  sdk.call_native_func(object, string typeName, string methodName, ...) -> any
+
+  sdk.get_primary_camera() -> userdata
+  sdk.get_player() -> userdata
+
+  sdk.to_managed_object(void* object) -> userdata
+  sdk.to_thread(void* thread) -> userdata
+
+  sdk.create_instance(string typeName) -> userdata
+
+IMGUI NAMESPACE (for drawing custom UI)
+  imgui.begin(string name) -> bool (visible)
+  imgui.end() -> void
+
+  imgui.button(string label) -> bool (clicked)
+  imgui.checkbox(string label, bool value) -> bool changed, bool value
+  imgui.slider_float(string label, float value, float min, float max) -> bool changed, float value
+  imgui.slider_int(string label, int value, int min, int max) -> bool changed, int value
+  imgui.input_text(string label, string value, int maxLen) -> bool changed, string value
+  imgui.text(string text) -> void
+  imgui.text_colored(float r, float g, float b, float a, string text) -> void
+  imgui.separator() -> void
+  imgui.same_line() -> void
+  imgui.new_line() -> void
+  imgui.spacing() -> void
+
+  imgui.is_key_down(int keyCode) -> bool
+  imgui.is_key_pressed(int keyCode) -> bool
+
+  imgui.combo(string label, int current, table items) -> bool changed, int selected
+
+CALLBACK EVENTS
+Register these as global functions in your script:
+
+  function OnPresent()          -- Called every frame during ImGui render pass
+  function OnPreGuiDraw()       -- Called before RE Engine draws its UI
+  function OnPostGuiDraw()      -- Called after RE Engine draws its UI
+  function OnUpdate()           -- Called every game update tick
+  function OnPreCameraUpdate()  -- Called before camera updates
+  function OnPostCameraUpdate() -- Called after camera updates
+
+EXAMPLE: Simple mod
+  local sdk = sdk
+
+  local function on_update()
+      local player = sdk.get_player()
+      if not player then return end
+
+      local health = sdk.get_native_field(player, "Health")
+      if health and health < 100 then
+          sdk.set_native_field(player, "Health", 1000)
+      end
+  end
+
+  function OnUpdate()
+      on_update()
+  end
+
+  function OnPresent()
+      imgui.begin("Auto Heal Mod")
+      imgui.text("Player health auto-set to 1000")
+      imgui.end()
+  end
+
+FILE PLACEMENT
+  - Autorun scripts: reframework/autorun/*.lua (loaded on game start)
+  - Manual scripts: load from the Scripts tab in the overlay
+
+DEBUG FUNCTIONS
+  re.log(string message) -- prints to REFramework log console
+  re.console_print(string message)

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TavernKeep Dashboard - SillyTavern Self-Hosted Control Panel</title>
+    <meta name="description" content="TavernKeep Dashboard for managing SillyTavern self-hosted stack, local Ollama models, and system backups.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Top Header Navigation -->
+        <header class="navbar">
+            <div class="brand">
+                <div class="logo-icon">🏰</div>
+                <div class="brand-text">
+                    <h1>TavernKeep</h1>
+                    <span class="version-tag">v1.0 Free Core</span>
+                </div>
+            </div>
+            
+            <div class="status-badges">
+                <div class="badge" id="backend-status">
+                    <span class="dot online"></span> Backend: Online
+                </div>
+                <div class="badge" id="ollama-status">
+                    <span class="dot checking"></span> Ollama Engine: Checking...
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content Area -->
+        <main class="dashboard-main">
+            <!-- System Resource Metrics Bar -->
+            <section class="metrics-grid">
+                <div class="metric-card glass">
+                    <div class="metric-header">
+                        <span class="metric-icon">⚡</span>
+                        <h3>CPU Usage</h3>
+                    </div>
+                    <div class="metric-value" id="cpu-value">-- %</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="cpu-bar" style="width: 0%;"></div>
+                    </div>
+                </div>
+
+                <div class="metric-card glass">
+                    <div class="metric-header">
+                        <span class="metric-icon">🧠</span>
+                        <h3>Memory (RAM)</h3>
+                    </div>
+                    <div class="metric-value" id="ram-value">-- %</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill warning" id="ram-bar" style="width: 0%;"></div>
+                    </div>
+                </div>
+
+                <div class="metric-card glass">
+                    <div class="metric-header">
+                        <span class="metric-icon">💾</span>
+                        <h3>Storage (Disk)</h3>
+                    </div>
+                    <div class="metric-value" id="disk-value">-- %</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill success" id="disk-bar" style="width: 0%;"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Action & Model Puller Section -->
+            <section class="panel-section glass">
+                <div class="section-header">
+                    <h2><span class="icon">📥</span> Pull Local LLM Model</h2>
+                    <p class="subtitle">Download any model directly from the official Ollama library (e.g. <code>llama3:8b</code>, <code>mistral:7b</code>, <code>phi3:mini</code>)</p>
+                </div>
+                <form id="pull-model-form" class="pull-form">
+                    <div class="input-group">
+                        <input type="text" id="model-name-input" placeholder="Enter model name (e.g., llama3:8b)" required>
+                        <button type="submit" id="pull-btn" class="btn primary">
+                            <span class="btn-text">Pull Model</span>
+                            <span class="spinner hidden"></span>
+                        </button>
+                    </div>
+                    <div id="pull-status-message" class="status-msg hidden"></div>
+                </form>
+            </section>
+
+            <!-- Installed Models Section -->
+            <section class="panel-section glass">
+                <div class="section-header">
+                    <div class="title-with-badge">
+                        <h2><span class="icon">🤖</span> Installed Models</h2>
+                        <span class="count-badge" id="models-count">0</span>
+                    </div>
+                    <button id="refresh-models-btn" class="btn secondary small">🔄 Refresh</button>
+                </div>
+
+                <div id="models-grid" class="models-grid">
+                    <div class="empty-state">Loading installed models...</div>
+                </div>
+            </section>
+
+            <!-- Backups & Restore Section -->
+            <section class="panel-section glass">
+                <div class="section-header">
+                    <h2><span class="icon">📦</span> Backup & Restore</h2>
+                    <p class="subtitle">Export complete SillyTavern characters, chats, and configurations into a unified Zip archive.</p>
+                </div>
+
+                <div class="backup-actions">
+                    <div class="input-group">
+                        <input type="text" id="backup-tag-input" placeholder="Optional backup label (e.g. pre-update)">
+                        <button id="create-backup-btn" class="btn success">
+                            <span>✨ Create Backup</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Backup Archive</th>
+                                <th>Size</th>
+                                <th>Created Date</th>
+                                <th class="text-right">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="backups-list">
+                            <tr><td colspan="4" class="text-center">Loading backup archives...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>TavernKeep Free Core • Open Source SillyTavern Stack Manager</p>
+        </footer>
+    </div>
+
+    <!-- Modal for Model Info -->
+    <div id="info-modal" class="modal hidden">
+        <div class="modal-content glass">
+            <div class="modal-header">
+                <h3 id="modal-title">Model Parameters & Info</h3>
+                <button id="close-modal-btn" class="close-btn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <pre id="modal-json-content">Loading info...</pre>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

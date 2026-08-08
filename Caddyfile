@@ -1,0 +1,19 @@
+{
+    admin off
+}
+
+# Reverse proxy routing for TavernKeep stack
+:80 {
+    # Route /api/* and /manager/* to TavernKeep Sidecar backend
+    handle /api/* {
+        reverse_proxy tavernkeep:5000
+    }
+    handle /manager/* {
+        reverse_proxy tavernkeep:5000
+    }
+
+    # Route all other traffic to SillyTavern web interface
+    handle {
+        reverse_proxy sillytavern:8000
+    }
+}

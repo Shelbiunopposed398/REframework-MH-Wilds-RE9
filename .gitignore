@@ -1,0 +1,34 @@
+# Python & Bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Testing & Coverage
+.pytest_cache/
+.coverage
+htmlcov/
+.nox/
+.tox/
+
+# Local Data & Backups (Runtime generated)
+data/
+backups/
+*.zip
+
+# Docker & Caddy local state
+.caddy/
+caddy_data/
+caddy_config/
+
+# IDEs & System files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

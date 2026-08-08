@@ -1,0 +1,59 @@
+services:
+  sillytavern:
+    image: ghcr.io/sillytavern/sillytavern:latest
+    container_name: sillytavern
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    volumes:
+      - sillytavern_data:/home/node/app/config
+      - sillytavern_public:/home/node/app/public
+    environment:
+      - NODE_ENV=production
+
+  ollama:
+    image: ollama/ollama:latest
+    container_name: ollama
+    restart: unless-stopped
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_models:/root/.ollama
+
+  tavernkeep:
+    build:
+      context: ./tavernkeep
+      dockerfile: Dockerfile
+    container_name: tavernkeep
+    restart: unless-stopped
+    ports:
+      - "5000:5000"
+    volumes:
+      - sillytavern_data:/data/sillytavern
+      - ./backups:/data/backups
+    environment:
+      - OLLAMA_BASE_URL=http://ollama:11434
+      - SILLYTAVERN_DATA_DIR=/data/sillytavern
+      - BACKUP_DIR=/data/backups
+
+  caddy:
+    image: caddy:latest
+    container_name: tavernkeep_proxy
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      - sillytavern
+      - tavernkeep
+
+volumes:
+  sillytavern_data:
+  sillytavern_public:
+  ollama_models:
+  caddy_data:
+  caddy_config:

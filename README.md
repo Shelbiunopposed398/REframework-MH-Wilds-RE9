@@ -1,6 +1,6 @@
 # 🏰 TavernKeep - SillyTavern Self-Hosted Stack & Manager
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![License: Source-Available](https://img.shields.io/badge/License-Source--Available%20%26%20Anti--SaaS-blueviolet.svg)](LICENSE)
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
 [![Docker Compose](https://img.shields.io/badge/Docker-Compose-blue)](https://www.docker.com/)
 [![Build Status](https://img.shields.io/badge/CI-Passing-brightgreen)](#automated-testing)
@@ -92,4 +92,8 @@ python -m venv venv
 
 ## 📜 License
 
-Distributed under the MIT License. See [`LICENSE`](LICENSE) for details.
+Distributed under the **Source-Available & Anti-SaaS License (v1.0)**. 
+- Free for individual, internal, and business self-hosted deployment.
+- Reselling or operating as a managed cloud service (SaaS) requires a separate commercial license from the author.
+
+See [`LICENSE`](LICENSE) for complete terms.

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TavernKeep — Self-Hosted SillyTavern & Local LLM Stack</title>
+    <meta name="description" content="1-Click self-hosted launcher, Docker stack & glassmorphic control panel for SillyTavern and Ollama LLMs.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Background glow effects -->
+    <div class="ambient-glow glow-1"></div>
+    <div class="ambient-glow glow-2"></div>
+
+    <div class="site-wrapper">
+        <!-- Navigation -->
+        <nav class="nav">
+            <div class="nav-brand">
+                <span class="logo">🏰</span>
+                <span class="brand-name">TavernKeep</span>
+            </div>
+            <div class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#quickstart">Quick Start</a>
+                <a href="#architecture">Architecture</a>
+                <a href="https://github.com/rcisar77-stack/tavernkeep" target="_blank" class="github-btn">
+                    <span>GitHub Repo</span> ⭐
+                </a>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="badge-pill">✨ Free & Source-Available Core v1.0</div>
+            <h1 class="hero-title">
+                Self-Host SillyTavern & Local LLMs <br>
+                <span class="gradient-text">In Under 60 Seconds</span>
+            </h1>
+            <p class="hero-subtitle">
+                Zero configuration. One-click Docker orchestrator with an intuitive Model Manager, instant backup/restore, and real-time hardware gauges.
+            </p>
+
+            <div class="hero-actions">
+                <a href="#quickstart" class="btn btn-primary">⚡ 1-Click Installation</a>
+                <a href="https://github.com/rcisar77-stack/tavernkeep" target="_blank" class="btn btn-secondary">View on GitHub</a>
+            </div>
+
+            <!-- Terminal Snippet Preview -->
+            <div class="hero-code-block glass">
+                <div class="code-header">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                    <span class="code-title">Terminal Quickstart</span>
+                </div>
+                <pre><code>git clone https://github.com/rcisar77-stack/tavernkeep.git
+cd tavernkeep
+<span class="comment"># Windows PowerShell:</span>
+.\scripts\install.ps1
+
+<span class="comment"># Linux / macOS:</span>
+./scripts/install.sh</code></pre>
+            </div>
+        </section>
+
+        <!-- Feature Grid -->
+        <section id="features" class="features-section">
+            <div class="section-title-wrap">
+                <h2>Everything You Need For Local AI Chat</h2>
+                <p>Built for privacy enthusiasts, roleplayers, and local LLM developers.</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card glass">
+                    <div class="feature-icon">🚀</div>
+                    <h3>1-Click Stack Orchestration</h3>
+                    <p>Pre-configured Docker stack bundling SillyTavern, Ollama, Caddy auto-HTTPS proxy, and the TavernKeep manager.</p>
+                </div>
+
+                <div class="feature-card glass">
+                    <div class="feature-icon">🤖</div>
+                    <h3>LLM Model Manager</h3>
+                    <p>Download models directly from the Ollama library or HuggingFace (GGUF format) straight from your web browser.</p>
+                </div>
+
+                <div class="feature-card glass">
+                    <div class="feature-icon">📦</div>
+                    <h3>Zip Backup & Restore</h3>
+                    <p>Never lose a character card or chat transcript. Create single-file zip backups and restore them in seconds.</p>
+                </div>
+
+                <div class="feature-card glass">
+                    <div class="feature-icon">📊</div>
+                    <h3>Hardware Gauges</h3>
+                    <p>Monitor live CPU usage, RAM allocation, and disk space directly inside the control panel.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Start Section -->
+        <section id="quickstart" class="quickstart-section glass">
+            <h2>Get Started Now</h2>
+            <p>Ensure Docker Desktop is running on your machine, then run:</p>
+
+            <div class="os-tabs">
+                <div class="os-card">
+                    <h4>🪟 Windows (PowerShell)</h4>
+                    <pre><code>.\scripts\install.ps1</code></pre>
+                </div>
+                <div class="os-card">
+                    <h4>🐧 Linux / 🍎 macOS</h4>
+                    <pre><code>./scripts/install.sh</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>© 2026 TavernKeep. Released under the Source-Available & Anti-SaaS License (v1.0).</p>
+            <p><a href="https://github.com/rcisar77-stack/tavernkeep">GitHub Repository</a></p>
+        </footer>
+    </div>
+</body>
+</html>

